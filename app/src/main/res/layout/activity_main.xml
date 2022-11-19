@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B500BCD4"
+    android:background="#E8050202"
     tools:context=".MainActivity">
 
     <TextView
@@ -28,8 +28,8 @@
         android:hint="Enter a value"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:shadowColor="@color/text_shadow"
+        android:textColor="@color/white"
+        android:shadowColor="@color/white"
         android:shadowDx="-2"
         android:shadowDy="-2"
         android:shadowRadius="1"
@@ -42,8 +42,8 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="192dp"
-        android:layout_height="47dp"
+        android:layout_width="195dp"
+        android:layout_height="67dp"
         android:layout_marginStart="16dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
@@ -54,8 +54,8 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="192dp"
-        android:layout_height="47dp"
+        android:layout_width="194dp"
+        android:layout_height="69dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
         android:shadowRadius="1"
         android:text="Value: "
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/light_font"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/button_id"
