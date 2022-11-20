@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                     } else if(usdToFlag && eurFromFlag){
                         textView.setText(String.valueOf(((value *  ratesCodesMap.get("EUR")) /  ratesCodesMap.get("USD"))));
                     } else if(usdToFlag && tryFromFlag){
-                        textView.setText(String.valueOf(((value * ratesCodesMap.get("TRY")) / ratesCodesMap.get("USD"))));
+                        textView.setText(String.valueOf(((value *  ratesCodesMap.get("TRY")) / ratesCodesMap.get("USD"))));
                     } else if(usdToFlag && gbpFromFlag){
                         textView.setText(String.valueOf(((value *  ratesCodesMap.get("GBP")) /  ratesCodesMap.get("USD"))));
                     } else if(usdToFlag && audFromFlag){
@@ -406,7 +406,6 @@ public class MainActivity extends AppCompatActivity {
             else result = "Something went wrong. Please check the url";
 
             Log.v("Result in HttpGet method", result);
-            //textView.setText(result);
             return result;
         }
 
@@ -427,19 +426,13 @@ public class MainActivity extends AppCompatActivity {
             XmlPullParser xmlPullParser = xmlPullParserFactory.newPullParser();
             xmlPullParser.setInput(new StringReader(result));
             int eventType = xmlPullParser.getEventType();
-            String newResult = "";
             String tag = "";
             while(eventType != XmlPullParser.END_DOCUMENT){
-                if(eventType == XmlPullParser.START_DOCUMENT){
-                    newResult = "This IP Belongs to";
-                } else if(eventType == XmlPullParser.START_TAG){
+                if(eventType == XmlPullParser.START_TAG){
                     tag = xmlPullParser.getName();
-                } else if(eventType == XmlPullParser.END_TAG){
-
                 } else if(eventType==XmlPullParser.TEXT){
                     if(tag.equals("rate")){
                         rates.add(xmlPullParser.getText());
-                        newResult = newResult + (System.getProperty("line.separator")) + tag +": " +xmlPullParser.getText();
                         tag = "";
                     }
                     else if(tag.equals("code")){
